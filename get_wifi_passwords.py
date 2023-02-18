@@ -5,8 +5,8 @@ cmd_output = subprocess.run(
     ["netsh", "wlan", "show", "profiles"], capture_output=True).stdout.decode("utf-8", "ignore")
 
 
-profile_names = (re.findall(
-    "Todos os Perfis de Usurios: (.*)\r", cmd_output))
+profile_names = re.findall(
+    "Todos os Perfis de Usurios: (.*)\r", cmd_output)
 
 wifi_list = []
 
